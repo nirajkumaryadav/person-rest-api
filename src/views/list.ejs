@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person List</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h2>Person Management System</h2>
+    </header>
+    
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+            <h1 style="margin-bottom: 0;">List of People</h1>
+            <a href="/person/create" class="btn-primary">Create New Person</a>
+        </div>
+        
+        <% if (persons && persons.length === 0) { %>
+            <div class="empty-state">
+                <p>No people found. Add someone to get started.</p>
+            </div>
+        <% } else { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Mobile Number</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% persons.forEach(function(person) { %>
+                        <tr>
+                            <td><%= person.name %></td>
+                            <td><%= person.age %></td>
+                            <td><%= person.gender %></td>
+                            <td><%= person.mobileNumber %></td>
+                            <td class="action-links">
+                                <a href="/person/<%= person._id %>/edit">Edit</a>
+                                <a href="/person/<%= person._id %>/delete">Delete</a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+</body>
+</html>
