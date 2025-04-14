@@ -2,11 +2,9 @@
 
 This project is a RESTful web service built using Node.js and MongoDB to manage a collection of people. It provides endpoints to create, read, update, and delete person records.
 
-![Person Management System Demo](output.gif)
-
 ## Live Demo
 
-You can view the source code at [GitHub Repository](https://github.com/nirajkumaryadav/person-rest-api)
+![Person Management System Demo](output.gif)
 
 ## Features
 
